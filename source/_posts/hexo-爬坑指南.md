@@ -25,7 +25,12 @@ date: 2017-10-03 22:57:00
 2. **安装github**,太简单了
 
 3. **[异地更新办法](https://www.zhihu.com/question/21193762)**
+
 #### 常见问题:
+
 - [常见问题](http://xuanwo.org/2014/08/14/hexo-usual-problem/#%E6%9C%AC%E5%9C%B0%E6%B5%8F%E8%A7%88%E6%B2%A1%E9%97%AE%E9%A2%98%EF%BC%8CDeploy%E6%8A%A5%E9%94%99)
 
 - [hexo -d 报错](https://www.zhihu.com/question/38219432)
+
+
+- WARN No layout: index.html （本地主题文件没有部署好，将主题文件git clone到目录下theme文件夹下，改_config.yml下theme属性，注意，该属性名字与theme文件夹下主题文件夹名相同）
