@@ -1,7 +1,8 @@
 title: python获取本地路径os，sys
 author: John Doe
-date: 2017-10-20 15:02:01
-tags:
+tags: []
+categories: []
+date: 2017-10-20 15:02:00
 ---
 ```
 
@@ -29,6 +30,7 @@ if __name__=="__main__":
   print "sys.argv[0]=%s" % sys.argv[0]
     
 ```
+<!--more-->
 
 输出结果:
 

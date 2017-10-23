@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 通向远方的路
 subtitle:
 description:
-author: John Doe
-language:
-timezone:
+author: XixiZbz
+language: zh-Hans
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://xixizbz.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
