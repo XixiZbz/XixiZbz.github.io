@@ -12,3 +12,6 @@ tags:
    found character '%' that cannot start any token yaml
    ```
    - 原因：配置里有非法字符%，用''转义一下就好
+   
+   
+- sys获取的路径是执行程序的路径，不是模块内的路径，注意
