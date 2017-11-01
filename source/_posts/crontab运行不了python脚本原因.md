@@ -15,3 +15,15 @@ tags:
    
    
 - sys获取的路径是执行程序的路径，不是模块内的路径，注意
+- ``` navigator.userAgent
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36"```
+
+- centos7 安装双版本Python ，命令行 command not found 出现，需要将Python3的路径加入环境变量。
+
+  ```
+  PATH=$PATH:$HOME/bin:
+
+  PATH=$PATH:$HOME/bin:/usr/local/python3/bin
+
+  ```
+- 腾讯云主机的端口开发需要配置安全组策略，在控制台处。
