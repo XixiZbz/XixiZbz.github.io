@@ -27,3 +27,8 @@ tags:
 
   ```
 - 腾讯云主机的端口开发需要配置安全组策略，在控制台处。
+
+- centos7 使用不了IPython的原因是因为启动命令不是IPython，而是ipython
+
+- celery，flower ： socket.gaierror: [Errno -2] Name or service not known。
+原因是：--broker=后多了个空格
