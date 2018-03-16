@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="通向远方的路">
 <meta property="og:description" content="可能与linux 下python 有两个版本有关系，没时间折腾这个问题，使用程序内部定时功能，再加上supervisor监控程序防止报错关闭，同时输出错误日志。暂时绕开这个问题">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-08T02:31:52.054Z">
+<meta property="og:updated_time" content="2018-03-16T04:59:01.442Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="疑难杂症集锦">
 <meta name="twitter:description" content="可能与linux 下python 有两个版本有关系，没时间折腾这个问题，使用程序内部定时功能，再加上supervisor监控程序防止报错关闭，同时输出错误日志。暂时绕开这个问题">
@@ -329,6 +329,33 @@
 <ul>
 <li>linux 安装pip install -r requirement.txt时，显示gcc缺失：<br><a href="https://stackoverflow.com/questions/19955775/error-command-gcc-failed-with-exit-status-1-on-centos" target="_blank" rel="noopener">https://stackoverflow.com/questions/19955775/error-command-gcc-failed-with-exit-status-1-on-centos</a></li>
 </ul>
+<ul>
+<li>supervisor 启动不起来：</li>
+</ul>
+<p>supervisor作为一个进程管理的python软件非常的给力 但是一不小心就会遇到一些问题 就比如下面这个:</p>
+<p>unix:///var/run/supervisor.sock no such file<br>这个问题一般来说 有几个原因:</p>
+<p>supervisord没有运行起来.</p>
+<p>明明已经运行起来了他就是说没有.</p>
+<p>而且根据我的尝试 如果使用ubuntu, 那么进行下面的操作 100000% 会挂掉而且报错:</p>
+<p>安装:</p>
+<p>sudo apt-get install supervisor<br>使用:</p>
+<p>sudo service supervisor start<br>sudo supervisorctl<br>这里都是很正常的</p>
+<p>但是如果在第一次运行后 再尝试运行:</p>
+<p>sudo supervisorctl reload<br>或者在supervisorctl里面运行 reload</p>
+<p>那么这个服务就永远跑不起来了.</p>
+<p>上网搜了好多 结果都没有很好的解决方法. 进行尝试了很久 终于发现可以解决的方法了:</p>
+<p>首先删除通过apt-get安装的supervisor:</p>
+<p>sudo apt-get remove supervisor<br>然后</p>
+<p>sudo ps -ef | grep supervisor<br>找到对应的进程kill掉.</p>
+<p>再然后:</p>
+<p>sudo easy_install(pip install) supervisor==3.0b2<br>注意 这里就是重点:</p>
+<p>通过apt-get安装的supervisor 版本号是3.0a8, 而当你第一次安装这个版本之后 再用easy_install的话 就也是这个版本 而不是最新版的3.0b2</p>
+<p>然后生成配置文件(root权限):</p>
+<p>echo_supervisord_conf &gt; /etc/supervisord.conf<br>再然后:</p>
+<p>sudo supervisord<br>再然后:</p>
+<p>sudo supervisorctl<br>启动成功.</p>
+<p>最后说明:</p>
+<p>使用easy_install安装的supervisor的默认sock文件 会被定义在/tmp下面 而apt-get会在/var/run下面. 鉴于apt-get会出现各种问题 这里建议使用easy_install或是pip安装 supervisor.</p>
 
       
     </div>
