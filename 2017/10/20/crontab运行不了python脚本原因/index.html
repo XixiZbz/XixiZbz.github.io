@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="通向远方的路">
 <meta property="og:description" content="可能与linux 下python 有两个版本有关系，没时间折腾这个问题，使用程序内部定时功能，再加上supervisor监控程序防止报错关闭，同时输出错误日志。暂时绕开这个问题">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-16T04:59:01.442Z">
+<meta property="og:updated_time" content="2018-03-29T08:21:46.111Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="疑难杂症集锦">
 <meta name="twitter:description" content="可能与linux 下python 有两个版本有关系，没时间折腾这个问题，使用程序内部定时功能，再加上supervisor监控程序防止报错关闭，同时输出错误日志。暂时绕开这个问题">
@@ -356,6 +356,12 @@
 <p>sudo supervisorctl<br>启动成功.</p>
 <p>最后说明:</p>
 <p>使用easy_install安装的supervisor的默认sock文件 会被定义在/tmp下面 而apt-get会在/var/run下面. 鉴于apt-get会出现各种问题 这里建议使用easy_install或是pip安装 supervisor.</p>
+<ul>
+<li>云服务器上开启web服务ip地址填分配的地址，而不是localhost</li>
+</ul>
+<ul>
+<li>uwsgi 运行提示flask 未安装，大概率是uwsgi版本不兼容，切换到现在装的uwsgi目录下运行可以解决</li>
+</ul>
 
       
     </div>
